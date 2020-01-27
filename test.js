@@ -84,6 +84,29 @@ describe("Key Store", function () {
 
     });
 
+    // should respect expiry and not return a expired value
+    it("should not return saved value if expired with number", function (done) {
+
+        // save a new expired value
+        keystore.set("b", 2, -1)
+            .then(() => {
+
+                // get the value from indexeddb
+                keystore.get("b", 3)
+                    .then(value => {
+                        if (value === 3) {
+                            done();
+                        } else {
+                            done(1);
+                        }
+                    })
+                    .catch(done);
+
+            })
+            .catch(done);
+
+    });
+
     // should delete a value from database
     it("should delete a value from database", function (done) {
         // save a new value as 3

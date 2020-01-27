@@ -19,7 +19,7 @@ export declare function getFull(key: string): Promise<KeyStoreCols | undefined>;
  * @param value the value to store
  * @param expires The date that the value should expire in the database. This is set to 10 years by default
  */
-export declare function set(key: string, value: any, expires?: Date): Promise<void>;
+export declare function set(key: string, value: any, expires?: Date | number): Promise<void>;
 /**
  * Delete a value from the indexed db
  *

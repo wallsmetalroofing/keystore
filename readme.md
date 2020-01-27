@@ -1,5 +1,5 @@
 
-# @walls/key
+# @walls/keystore
 
 store
 

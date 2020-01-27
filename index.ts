@@ -40,11 +40,25 @@ export async function getFull(key: string) {
  * @param value the value to store
  * @param expires The date that the value should expire in the database. This is set to 10 years by default
  */
-export async function set(key: string, value: any, expires?: Date) {
+export async function set(key: string, value: any, expires?: Date | number) {
+
+    if (typeof expires === "number") {
+        // get the hours number
+        const h = expires;
+
+        // create a new Date instance
+        expires = new Date();
+        expires.setTime(expires.getTime() + (h * 60 * 60 * 1000));
+
+    } else if (!expires) {
+        // if not set the default to 1 year
+        expires = new Date();
+        expires.setFullYear(expires.getFullYear() + 1);
+    }
 
     const object: KeyStoreCols = {
         dateSaved: new Date(),
-        expires: expires || new Date(new Date().setFullYear(new Date().getFullYear() + 10)),
+        expires: expires,
         key,
         value
     };
