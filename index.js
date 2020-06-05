@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.remove = exports.set = exports.getFull = exports.get = void 0;
 const database_1 = require("./database");
 /**
  * Get the stored value for the key. If default is set then that value will get returned in case that there isn't a value in the database.

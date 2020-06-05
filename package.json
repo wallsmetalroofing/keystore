@@ -23,11 +23,12 @@
   },
   "homepage": "https://github.com/wallsmetalroofing/keystore#readme",
   "dependencies": {
-    "dexie": "^2.0.4"
+    "dexie": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^13.11.1",
     "fake-indexeddb": "^3.0.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "typescript": "^3.9.5"
   }
 }
