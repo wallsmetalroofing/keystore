@@ -1,6 +1,6 @@
 {
   "name": "@walls/keystore",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create a dexie keystore to use in the browser offline.",
   "main": "index.js",
   "scripts": {

@@ -1,11 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.db = void 0;
-const dexie_1 = require("dexie");
+const dexie_1 = __importDefault(require("dexie"));
 /**
  * the Keystore class to create the database
  */
-class KeyStore extends dexie_1.Dexie {
+class KeyStore extends dexie_1.default {
     constructor() {
         // update a Dexie object
         super("key-store");
